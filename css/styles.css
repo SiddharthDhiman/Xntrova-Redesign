@@ -1,0 +1,221 @@
+/* 
+  Xntrova Technologies - Redesign Stylesheet
+  Theme: Modern, Premium, Professional, Minimal, Conversion-focused
+*/
+
+:root {
+  --xn-bg-dark: #001721;
+  --xn-bg-darker: #000f17;
+  --xn-bg-surface: #032535;
+  --xn-primary: #008bb9;
+  --xn-primary-light: #00a6dc;
+  --xn-primary-dark: #006080;
+  --xn-secondary: #004b6b;
+  --xn-accent: #f59e0b;
+  --xn-accent-glow: rgba(245, 158, 11, 0.25);
+  --xn-teal-glow: rgba(0, 166, 220, 0.25);
+  --xn-text-dark: #0f172a;
+  --xn-text-muted: #64748b;
+  --xn-text-light: #f8fafc;
+  --xn-border: #e2e8f0;
+  --xn-border-dark: rgba(255, 255, 255, 0.1);
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--xn-text-dark);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--xn-primary);
+}
+
+/* Glassmorphism Classes */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-nav-scrolled {
+  box-shadow: 0 10px 30px -10px rgba(0, 23, 33, 0.1);
+}
+
+.glass-dark {
+  background: rgba(3, 37, 53, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+/* Subtle Gradient Grids & Backdrops */
+.bg-hero-mesh {
+  background-color: var(--xn-bg-darker);
+  background-image: 
+    radial-gradient(circle at 15% 30%, rgba(0, 139, 185, 0.28) 0%, transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(245, 158, 11, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 85%, rgba(0, 75, 107, 0.4) 0%, transparent 60%);
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+.bg-dot-pattern-light {
+  background-image: radial-gradient(rgba(0, 139, 185, 0.12) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+/* Animated Marquee */
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 32s linear infinite;
+}
+
+.animate-marquee-left:hover {
+  animation-play-state: paused;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite 2.5s;
+}
+
+/* Pulse Glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Button & Card Micro-Interactions */
+.hover-lift {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px -10px rgba(0, 31, 43, 0.14);
+}
+
+/* Interactive Tabs Active State */
+.service-tab.active {
+  background: var(--xn-primary);
+  color: #ffffff;
+  box-shadow: 0 8px 20px -6px rgba(0, 139, 185, 0.5);
+}
+
+.portfolio-tab.active {
+  background: var(--xn-primary);
+  color: #ffffff;
+  box-shadow: 0 6px 16px -4px rgba(0, 139, 185, 0.4);
+}
+
+/* Gradient Text */
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 30%, #a5f3fc 70%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-primary {
+  background: linear-gradient(135deg, #008bb9 0%, #0284c7 60%, #0369a1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* FAQ Accordion Transitions */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faq-item.active .faq-content {
+  max-height: 350px;
+  transition: max-height 0.35s ease-in-out, opacity 0.35s ease;
+  opacity: 1;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+  color: var(--xn-primary);
+}
+
+/* Modal Overlay */
+.modal-backdrop {
+  background-color: rgba(0, 15, 23, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+/* Slider transition */
+.testimonial-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Accessibility focus rings */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--xn-primary);
+  outline-offset: 2px;
+}
